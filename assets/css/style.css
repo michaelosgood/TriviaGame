@@ -2,4 +2,26 @@
 
 body {
 	text-align: center;
+	text-shadow: 3px 3px 3px #000;
+	color: white;
+	font-family: 'Cormorant Unicase';
+	font-size: 20px;
+	background-color: black;
+	background-image: url("https://img-s3.onedio.com/id-57a092e54b9d8b3c09cd2330/rev-0/raw/s-5bb8b779c9194dbba3093167e84733545199b97e.jpg");
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+
+#title {
+	color: white;
+	font-family: 'Cormorant Unicase';font-size: 60px;
+}
+
+#wrapper {
+	padding-top: 20%;
+}
+
+button {
+	color: black;
+	background-color: grey;
 }

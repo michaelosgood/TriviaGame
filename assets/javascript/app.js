@@ -11,7 +11,7 @@ var audio = new Audio("assets/audio/GameOfThrones.mp3");
 var questions = [{
 	question: "1. Who killed Robb Stark?",
 	answers: ["Joffrey Baratheon ","Theon Greyjoy ","Roose Bolton ","Cregor Clegane "],
-	correctAnswer: "Roose Bolton"
+	correctAnswer: "Roose Bolton "
 }, {
 	question: "2. What is the name of Arya Stark's sword?",
 	answers: ["Whistle ","Needle ","Thumbnail ","Hrunting "],
@@ -19,7 +19,7 @@ var questions = [{
 }, {
 	question: "3. Who killed Ned Stark?",
 	answers: ["Cregor Clegane ","Roose Bolton ","Cersei Lannister ","Joffrey Baratheon "],
-	correctAnswer: "Joffrey Baratheon"
+	correctAnswer: "Joffrey Baratheon "
 }, {
 	question: "4. Who killed Tywin Lannister?",
 	answers: ["Tyrion Lannister ","Roose Bolton ","Ned Stark ","Daenerys Targaryen "],
@@ -48,7 +48,7 @@ var game = {
 	counter: 120,
 	countdown: function(){ //my countdown function
 		game.counter--; //subtracts 1 from the game.counter
-		$("#counter").html(game.counter);
+		$("#counter").html(game.counter); //displays the counter on our html page
 		if(game.counter<=0){ //this executes when game.counter is less than or equal to 0
 			console.log("Your Time is Up!"); //console logs that time is up
 			game.done(); //game.done function is ran
@@ -56,7 +56,7 @@ var game = {
 	},
 	start: function() {
 		timer = setInterval(game.countdown, 1000); //every 1000 ms, the countdown function will execute
-		audio.play();
+		audio.play();//plays the Game of Thrones theme song
 		$("#subwrapper").prepend('<h2>Time Remaining: <span id="counter">120</span> Seconds</h2>'); //adds the time remaining to our html file
 		$("#start").remove(); //removes the start button after it is clicked
 		console.log("start button clicked"); //verifies that start button was clicked
@@ -129,12 +129,12 @@ var game = {
 		},
 
 		result: function(){
-			clearInterval(timer); //clears the interval
+			clearInterval(timer); //clears the timer interval
 			$("#subwrapper h2").remove(); //removes my subwrapper and h2 element
 			$("#subwrapper").html("<h2>All done!</h2>"); //All done will apper
-			$("#subwrapper").append("<h3>Correct Answer: "+this.correct+"</h3>"); //display correct answers
-			$("#subwrapper").append("<h3>Inorrect Answer: "+this.incorrect+"</h3>");
-			$("#subwrapper").append("<h3>Unanswered: "+(questions.length-(this.incorrect+this.correct))+"</h3>"); //looks for unanswered questions
+			$("#subwrapper").append("<h3>Correct Answer: "+this.correct+"</h3>"); //display the number of correct answers
+			$("#subwrapper").append("<h3>Inorrect Answer: "+this.incorrect+"</h3>");//display the number of incorrect answers
+			$("#subwrapper").append("<h3>Unanswered: "+(questions.length-(this.incorrect+this.correct))+"</h3>"); //displays number of unanswered questions
 		}
 	}
 
