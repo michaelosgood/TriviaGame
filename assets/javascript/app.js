@@ -6,7 +6,7 @@ $("#start").on("click",function(){ //execute this function when the start button
 $(document).on("click","#end",function(){ //waits for page to load entirely before executing this code (done button gets created after timer runs out)
 	game.done();//exectues the game.done function when the button with #end is clicked on
 })
-var audio = new Audio("assets/audio/GameOfThrones.mp3");
+var audio = new Audio("assets/audio/GameOfThrones.mp3"); //variable for theme song
 
 var questions = [{
 	question: "1. Who killed Robb Stark?",
@@ -26,8 +26,8 @@ var questions = [{
 	correctAnswer: "Tyrion Lannister "
 }, {
 	question: "5. How did Tommen Baratheon die?",
-	answers: ["Starvation ","Assasinated ","Murdered ","Committed Suicide "],
-	correctAnswer: "Committed Suicide "
+	answers: ["Starvation ","Illness ","Murdered ","Suicide "],
+	correctAnswer: "Suicide "
 }, {
 	question: "6. Who killed the High Sparrow?",
 	answers: ["Daario Naharis ","Cersei Lannister ","Jamie Lannister ","Grey Worm "],
@@ -72,63 +72,71 @@ var game = {
 		$.each($("input[name='question-0']:checked"),function(){ //.each() looks for every element within its paranthesis
 			if($(this).val()===questions[0].correctAnswer){
 				game.correct++;
-			} else {
+			} 
+			else {
 				game.incorrect++;
 			}
 		});
 		$.each($("input[name='question-1']:checked"),function(){ //.each() looks for every element within its paranthesis
 			if($(this).val()===questions[1].correctAnswer){
 				game.correct++;
-			} else {
+			} 
+			else {
 				game.incorrect++;
 			}
 		});
 		$.each($("input[name='question-2']:checked"),function(){ //.each() looks for every element within its paranthesis
 			if($(this).val()===questions[2].correctAnswer){
 				game.correct++;
-			} else {
+			} 
+			else {
 				game.incorrect++;
 			}
 		});
 		$.each($("input[name='question-3']:checked"),function(){ //.each() looks for every element within its paranthesis
 			if($(this).val()===questions[3].correctAnswer){
 				game.correct++;
-			} else {
+			} 
+			else {
 				game.incorrect++;
 			}
 		});
 		$.each($("input[name='question-4']:checked"),function(){ //.each() looks for every element within its paranthesis
 			if($(this).val()===questions[4].correctAnswer){
 				game.correct++;
-			} else {
+			} 
+			else {
 				game.incorrect++;
 			}
 		});
 		$.each($("input[name='question-5']:checked"),function(){ //.each() looks for every element within its paranthesis
 			if($(this).val()===questions[5].correctAnswer){
 				game.correct++;
-			} else {
+			} 
+			else {
 				game.incorrect++;
 			}
 		});
 		$.each($("input[name='question-6']:checked"),function(){ //.each() looks for every element within its paranthesis
 			if($(this).val()===questions[6].correctAnswer){
 				game.correct++;
-			} else {
+			} 
+			else {
 				game.incorrect++;
 			}
 		});
 		$.each($("input[name='question-7']:checked"),function(){ //.each() looks for every element within its paranthesis
 			if($(this).val()===questions[7].correctAnswer) {
 				game.correct++;
-			} else {
+			} 
+			else {
 				game.incorrect++;
 			}
 		});
 		this.result(); //prints the results of the game
 		},
 
-		result: function(){
+		result: function(){ //used to display results after time is up or done button is clicked
 			clearInterval(timer); //clears the timer interval
 			$("#subwrapper h2").remove(); //removes my subwrapper and h2 element
 			$("#subwrapper").html("<h2>All done!</h2>"); //All done will apper
