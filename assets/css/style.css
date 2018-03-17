@@ -14,7 +14,8 @@ body {
 
 #title {
 	color: white;
-	font-family: 'Cormorant Unicase';font-size: 60px;
+	font-family: 'Cormorant Unicase';
+	font-size: 60px;
 }
 
 #wrapper {
@@ -24,4 +25,15 @@ body {
 button {
 	color: black;
 	background-color: grey;
+}
+
+/* For screens that are smaller than 768px and larger than 640px*/
+@media screen and (max-width:768px) {
+	#title {
+		font-size: 50px;
+	}
+	#wrapper {
+		padding-top: 40%;
+	}
+
 }
