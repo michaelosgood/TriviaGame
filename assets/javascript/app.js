@@ -10,8 +10,8 @@ var audio = new Audio("assets/audio/GameOfThrones.mp3"); //variable for theme so
 
 var questions = [{
 	question: "1. Who killed Robb Stark?",
-	answers: ["Joffrey Baratheon ","Theon Greyjoy ","Roose Bolton ","Cregor Clegane "],
-	correctAnswer: "Roose Bolton "
+	answers: ["Joffrey Baratheon", "Theon Greyjoy","Roose Bolton","Cregor Clegane"],
+	correctAnswer: 'Roose Bolton '
 }, {
 	question: "2. What is the name of Arya Stark's sword?",
 	answers: ["Whistle ","Needle ","Thumbnail ","Hrunting "],
@@ -63,7 +63,7 @@ var game = {
 		for(var i=0; i<questions.length; i++){  //variable i is used to display each individual question in our questions array
 			$("#subwrapper").append("<h2>"+ questions[i].question+"</h2>"); //append the subwrapper with questions
 			for(var j=0; j<questions[i].answers.length; j++){
-				$("#subwrapper").append("<input type='radio' name='question-"+i+"'value='"+questions[i].answers[j]+"'>'"+questions[i].answers[j]);
+				$("#subwrapper").append("<input type='radio' name='question"+i+"value='"+questions[i].answers[j]+"'>"+questions[i].answers[j]);
 			}
 		}
 		$("#subwrapper").append('<br><br><button id="end">Done</button>')//creates the Done button after timer is up
