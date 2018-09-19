@@ -152,10 +152,11 @@ var game = {
 		}
 	}
 
-	$("#start").on("click",function(){ //execute this function when the start button is clicked
-		game.start();
-	})
+// Click Events
+$("#start").on("click",function(){ //execute this function when the start button is clicked
+	game.start();
+})
 	
-	$(document).on("click","#end",function(){ //waits for page to load entirely before executing this code (done button gets created after timer runs out)
-		game.done();//exectues the game.done function when the button with #end is clicked on
-	})
+$(document).on("click","#end",function(){ //waits for page to load entirely before executing this code (done button gets created after timer runs out)
+	game.done();//exectues the game.done function when the button with #end is clicked on
+})
