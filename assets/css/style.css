@@ -3,10 +3,10 @@
 body {
 	text-align: center;
 	text-shadow: 3px 3px 3px #000;
-	color: white;
+	color: white !important;
 	font-family: 'Cormorant Unicase';
 	font-size: 20px;
-	background-color: black;
+	background-color: black !important;
 	background-image: url("https://img-s3.onedio.com/id-57a092e54b9d8b3c09cd2330/rev-0/raw/s-5bb8b779c9194dbba3093167e84733545199b97e.jpg");
 	background-repeat: no-repeat;
 	background-position: center top;
@@ -23,9 +23,13 @@ body {
 }
 
 button {
-	color: black;
+	color: white !important;
 	background-color: grey;
 }
+
+#quiz-area h2 {
+	margin-top: 50px;
+  }
 
 /* For screens that are smaller than 768px and larger than 640px*/
 @media screen and (max-width:768px) {
@@ -35,5 +39,4 @@ button {
 	#wrapper {
 		padding-top: 40%;
 	}
-
 }

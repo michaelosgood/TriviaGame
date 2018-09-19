@@ -1,13 +1,9 @@
 //Michael Osgood / Game of Thrones Trivia Game
-$("#start").on("click",function(){ //execute this function when the start button is clicked
-	game.start();
-})
+var panel = $("#quiz-area");
 
-$(document).on("click","#end",function(){ //waits for page to load entirely before executing this code (done button gets created after timer runs out)
-	game.done();//exectues the game.done function when the button with #end is clicked on
-})
 var audio = new Audio("assets/audio/GameOfThrones.mp3"); //variable for theme song
 
+// Questions 
 var questions = [{
 	question: "1. Who killed Robb Stark?",
 	answers: ["Joffrey Baratheon", "Theon Greyjoy","Roose Bolton","Cregor Clegane"],
@@ -42,31 +38,41 @@ var questions = [{
 	correctAnswer: "Ramsay Bolton "
 }];
 
+// Variable that will hold the setInterval
+var timer;
+
 var game = {
+
 	correct: 0,
 	incorrect: 0,
 	counter: 120,
-	countdown: function(){ //my countdown function
-		game.counter--; //subtracts 1 from the game.counter
-		$("#counter").html(game.counter); //displays the counter on our html page
-		if(game.counter<=0){ //this executes when game.counter is less than or equal to 0
-			console.log("Your Time is Up!"); //console logs that time is up
-			game.done(); //game.done function is ran
+
+	
+	countdown: function() {
+		game.counter--;
+		$("#counter-number").html(game.counter);
+		if (game.counter === 0) {
+			console.log("Your Times is Up!");
+			  game.done();
 		}
 	},
+
 	start: function() {
 		timer = setInterval(game.countdown, 1000); //every 1000 ms, the countdown function will execute
 		audio.play();//plays the Game of Thrones theme song
-		$("#subwrapper").prepend('<h2>Time Remaining: <span id="counter">120</span> Seconds</h2>'); //adds the time remaining to our html file
+		$("#sub-wrapper").prepend('<h2>Time Remaining: <span id="counter">120</span> Seconds</h2>'); //adds the time remaining to our html file
+		
 		$("#start").remove(); //removes the start button after it is clicked
 		console.log("start button clicked"); //verifies that start button was clicked
-		for(var i=0; i<questions.length; i++){  //variable i is used to display each individual question in our questions array
-			$("#subwrapper").append("<h2>"+ questions[i].question+"</h2>"); //append the subwrapper with questions
-			for(var j=0; j<questions[i].answers.length; j++){
-				$("#subwrapper").append("<input type='radio' name='question"+i+"value='"+questions[i].answers[j]+"'>"+questions[i].answers[j]);
+
+		for(var i = 0; i < questions.length; i++) {  //variable i is used to display each individual question in our questions array
+			panel.append("<h2>"+ questions[i].question+"</h2>"); //append the sub-wrapper with questions
+			for(var j = 0; j<questions[i].answers.length; j++) {
+				panel.append("<input type='radio' name='question-" + i + 
+				"' value='" + questions[i].answers[j] + "''>" + questions[i].answers[j]);
 			}
 		}
-		$("#subwrapper").append('<br><br><button id="end">Done</button>')//creates the Done button after timer is up
+		panel.append('<br><br><button id="end">Done</button>')//creates the Done button after timer is up
 	},
 	done: function(){ //once the countdown timer is up, this function will execute
 		$.each($("input[name='question-0']:checked"),function(){ //.each() looks for every element within its paranthesis
@@ -138,11 +144,18 @@ var game = {
 
 		result: function(){ //used to display results after time is up or done button is clicked
 			clearInterval(timer); //clears the timer interval
-			$("#subwrapper h2").remove(); //removes my subwrapper and h2 element
-			$("#subwrapper").html("<h2>All done!</h2>"); //All done will apper
-			$("#subwrapper").append("<h3>Correct Answer: "+this.correct+"</h3>"); //display the number of correct answers
-			$("#subwrapper").append("<h3>Inorrect Answer: "+this.incorrect+"</h3>");//display the number of incorrect answers
-			$("#subwrapper").append("<h3>Unanswered: "+(questions.length-(this.incorrect+this.correct))+"</h3>"); //displays number of unanswered questions
+			$("#sub-wrapper h2").remove(); //removes my sub-wrapper and h2 element
+			panel.html("<h2>All done!</h2>"); //All done will apper
+			panel.append("<h3>Correct Answer: "+this.correct+"</h3>"); //display the number of correct answers
+			panel.append("<h3>Inorrect Answer: "+this.incorrect+"</h3>");//display the number of incorrect answers
+			panel.append("<h3>Unanswered: "+(questions.length-(this.incorrect+this.correct))+"</h3>"); //displays number of unanswered questions
 		}
 	}
 
+	$("#start").on("click",function(){ //execute this function when the start button is clicked
+		game.start();
+	})
+	
+	$(document).on("click","#end",function(){ //waits for page to load entirely before executing this code (done button gets created after timer runs out)
+		game.done();//exectues the game.done function when the button with #end is clicked on
+	})
