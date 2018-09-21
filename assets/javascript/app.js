@@ -60,7 +60,7 @@ var game = {
 	start: function() {
 		timer = setInterval(game.countdown, 1000); //every 1000 ms, the countdown function will execute
 		audio.play();//plays the Game of Thrones theme song
-		$("#sub-wrapper").prepend('<h2>Time Remaining: <span id="counter">120</span> Seconds</h2>'); //adds the time remaining to our html file
+		$("#sub-wrapper").prepend("<h2>Time Remaining: <span id='counter-number'>120</span> Seconds</h2>"); //adds the time remaining to our html file
 		
 		$("#start").remove(); //removes the start button after it is clicked
 		console.log("start button clicked"); //verifies that start button was clicked
@@ -72,7 +72,7 @@ var game = {
 				"' value='" + questions[i].answers[j] + "''>" + questions[i].answers[j]);
 			}
 		}
-		panel.append('<br><br><button id="end">Done</button>')//creates the Done button after timer is up
+		panel.append("<br><button id='end'>Done</button>")//creates the Done button after timer is up
 	},
 	done: function(){ //once the countdown timer is up, this function will execute
 		$.each($("input[name='question-0']:checked"),function(){ //.each() looks for every element within its paranthesis
@@ -150,13 +150,13 @@ var game = {
 			panel.append("<h3>Inorrect Answer: "+this.incorrect+"</h3>");//display the number of incorrect answers
 			panel.append("<h3>Unanswered: "+(questions.length-(this.incorrect+this.correct))+"</h3>"); //displays number of unanswered questions
 		}
-	}
+	};
 
 // Click Events
 $("#start").on("click",function(){ //execute this function when the start button is clicked
 	game.start();
-})
+});
 	
 $(document).on("click","#end",function(){ //waits for page to load entirely before executing this code (done button gets created after timer runs out)
 	game.done();//exectues the game.done function when the button with #end is clicked on
-})
+});
