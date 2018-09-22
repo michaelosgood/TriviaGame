@@ -7,35 +7,35 @@ var audio = new Audio("assets/audio/GameOfThrones.mp3"); //variable for theme so
 var questions = [{
 	question: "1. Who killed Robb Stark?",
 	answers: [" Joffrey Baratheon  ", " Theon Greyjoy  "," Roose Bolton  "," Cregor Clegane  "],
-	correctAnswer: 'Roose Bolton '
+	correctAnswer: " Roose Bolton  "
 }, {
 	question: "2. What is the name of Arya Stark's sword?",
-	answers: [" Whistle  "," Needle "," Thumbnail  "," Hrunting  "],
-	correctAnswer: "Needle "
+	answers: [" Whistle  "," Needle  "," Thumbnail  "," Hrunting  "],
+	correctAnswer: " Needle  "
 }, {
 	question: "3. Who killed Ned Stark?",
 	answers: [" Cregor Clegane  "," Roose Bolton  "," Cersei Lannister "," Joffrey Baratheon  "],
-	correctAnswer: "Joffrey Baratheon "
+	correctAnswer: " Joffrey Baratheon  "
 }, {
 	question: "4. Who killed Tywin Lannister?",
 	answers: [" Tyrion Lannister  "," Roose Bolton  "," Ned Stark  "," Daenerys Targaryen  "],
-	correctAnswer: "Tyrion Lannister "
+	correctAnswer: " Tyrion Lannister  "
 }, {
 	question: "5. How did Tommen Baratheon die?",
 	answers: [" Starvation  "," Illness  "," Murdered  "," Suicide  "],
-	correctAnswer: "Suicide "
+	correctAnswer: " Suicide  "
 }, {
 	question: "6. Who killed the High Sparrow?",
 	answers: [" Daario Naharis  "," Cersei Lannister  "," Jamie Lannister  "," Grey Worm  "],
-	correctAnswer: "Cersei Lannister "
+	correctAnswer: " Cersei Lannister  "
 }, {
 	question: "7. Who has been nicknamed the Kingslayer?",
 	answers: [" Jamie Lannister  "," Tyrion Lannister  "," Sansa Stark  "," Robb Stark  "],
-	correctAnswer: "Jamie Lannister "
+	correctAnswer: " Jamie Lannister  "
 }, {
 	question: "8. Who tortures Theon Greyjoy?",
 	answers: [" Ramsay Bolton  "," Joffrey Lannister  "," Robb Stark  "," Daenerys Targaryen  "],
-	correctAnswer: "Ramsay Bolton "
+	correctAnswer: " Ramsay Bolton  "
 }];
 
 // Variable that will hold the setInterval
