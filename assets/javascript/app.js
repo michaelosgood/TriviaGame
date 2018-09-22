@@ -6,35 +6,35 @@ var audio = new Audio("assets/audio/GameOfThrones.mp3"); //variable for theme so
 // Questions 
 var questions = [{
 	question: "1. Who killed Robb Stark?",
-	answers: ["Joffrey Baratheon", "Theon Greyjoy","Roose Bolton","Cregor Clegane"],
+	answers: [" Joffrey Baratheon  ", " Theon Greyjoy  "," Roose Bolton  "," Cregor Clegane  "],
 	correctAnswer: 'Roose Bolton '
 }, {
 	question: "2. What is the name of Arya Stark's sword?",
-	answers: ["Whistle ","Needle ","Thumbnail ","Hrunting "],
+	answers: [" Whistle  "," Needle "," Thumbnail  "," Hrunting  "],
 	correctAnswer: "Needle "
 }, {
 	question: "3. Who killed Ned Stark?",
-	answers: ["Cregor Clegane ","Roose Bolton ","Cersei Lannister ","Joffrey Baratheon "],
+	answers: [" Cregor Clegane  "," Roose Bolton  "," Cersei Lannister "," Joffrey Baratheon  "],
 	correctAnswer: "Joffrey Baratheon "
 }, {
 	question: "4. Who killed Tywin Lannister?",
-	answers: ["Tyrion Lannister ","Roose Bolton ","Ned Stark ","Daenerys Targaryen "],
+	answers: [" Tyrion Lannister  "," Roose Bolton  "," Ned Stark  "," Daenerys Targaryen  "],
 	correctAnswer: "Tyrion Lannister "
 }, {
 	question: "5. How did Tommen Baratheon die?",
-	answers: ["Starvation ","Illness ","Murdered ","Suicide "],
+	answers: [" Starvation  "," Illness  "," Murdered  "," Suicide  "],
 	correctAnswer: "Suicide "
 }, {
 	question: "6. Who killed the High Sparrow?",
-	answers: ["Daario Naharis ","Cersei Lannister ","Jamie Lannister ","Grey Worm "],
+	answers: [" Daario Naharis  "," Cersei Lannister  "," Jamie Lannister  "," Grey Worm  "],
 	correctAnswer: "Cersei Lannister "
 }, {
 	question: "7. Who has been nicknamed the Kingslayer?",
-	answers: ["Jamie Lannister ","Tyrion Lannister ","Sansa Stark ","Robb Stark "],
+	answers: [" Jamie Lannister  "," Tyrion Lannister  "," Sansa Stark  "," Robb Stark  "],
 	correctAnswer: "Jamie Lannister "
 }, {
 	question: "8. Who tortures Theon Greyjoy?",
-	answers: ["Ramsay Bolton ","Joffrey Lannister ","Robb Stark ","Daenerys Targaryen "],
+	answers: [" Ramsay Bolton  "," Joffrey Lannister  "," Robb Stark  "," Daenerys Targaryen  "],
 	correctAnswer: "Ramsay Bolton "
 }];
 
@@ -72,7 +72,7 @@ var game = {
 				"' value='" + questions[i].answers[j] + "''>" + questions[i].answers[j]);
 			}
 		}
-		panel.append("<br><button id='end'>Done</button>")//creates the Done button after timer is up
+		panel.append("<br><br><button id='end'>Done</button>")//creates the Done button after timer is up
 	},
 	done: function(){ //once the countdown timer is up, this function will execute
 		$.each($("input[name='question-0']:checked"),function(){ //.each() looks for every element within its paranthesis
