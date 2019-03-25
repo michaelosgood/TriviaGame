@@ -13,7 +13,7 @@ var questions = [{
 	answers: [" Whistle  "," Needle  "," Thumbnail  "," Hrunting  "],
 	correctAnswer: " Needle  "
 }, {
-	question: "3. Who killed Ned Stark?",
+	question: "3. Who ordered the execution of Eddard (Ned) Stark?",
 	answers: [" Cregor Clegane  "," Roose Bolton  "," Cersei Lannister "," Joffrey Baratheon  "],
 	correctAnswer: " Joffrey Baratheon  "
 }, {
